@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.car-img {
+  max-height: 30rem;
+  max-width: 30rem;
+}
+
+.carousel {
+  max-width: 25rem;
+  max-height: 500px;
+}
+
+.produto-card {
+  padding-left: 500p;
+  padding-right: 40vw;
+}
+
+.prouto-card-title {
+  display: flex;
+  align-self: flex-start;
+}
+

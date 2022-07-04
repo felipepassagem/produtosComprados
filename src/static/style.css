@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  font-family: 'Montserrat', cursive;
+}
+
 .slider-container {
   margin-bottom: 50px;
   width: 100%;
@@ -11,8 +17,16 @@
   /* background: linear-gradient(to right, red, yellow); */
   outline: none;
   padding: 0;
-  margin: 0;
+  margin: 3%;
   background-color: aliceblue;
+}
+
+.table-cel{
+  font-size: x-large;
+}
+
+.card-subtitle{
+  font-size: large;
 }
 
 /* .card-img-v0 {
@@ -40,10 +54,19 @@
 
 .range-slider::-webkit-slider-thumb {
   appearance: none;
-  
-  background: rgba(58, 56, 56, 0.801);
-  width: 10px;
-  height: 10px;
+  background: rgba(42, 41, 41, 0.901);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider::-moz-range-thumb {
+  appearance: none;
+  background: rgba(42, 41, 41, 0.901);
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background .15s ease-in-out;
@@ -52,23 +75,61 @@
 .range-slider::-webkit-slider-thumb:hover {
   appearance: none;
   background-color: #161313;
-  background: rgba(20, 20, 20, 0.61);
-  width: 10px;
-  height: 10px;
+  background: rgba(27, 26, 26, 0.852);
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background .15s ease-in-out;
-  box-shadow: 0px 0px 3px 3px  #201f1f4b;
+  box-shadow: 0px 0px 3px 3px #201f1f4b;
 }
 
-.range-slider::-moz-range-thumb {
+/* .range-slider:-moz-range-thumb:hover {
+  appearance: none;
+  background-color: #161313;
+  background: rgba(27, 26, 26, 0.852);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+  box-shadow: 0px 0px 3px 3px #201f1f4b;
+} */
+
+.carousel-inner {
+  border-radius: '50%';
+}
+
+#btn-up:hover {
+  appearance: none;
+  background-color: #161313;
+  background: rgba(20, 20, 20, 0.61);
+ 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+  box-shadow: 0px 0px 3px 3px #201f1f4b;
+}
+
+#btn-down:hover {
+  appearance: none;
+  background-color: #161313;
+  background: rgba(20, 20, 20, 0.61);
+ 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+  box-shadow: 0px 0px 3px 3px #201f1f4b;
+}
+
+/* .range-slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border: 0;
   border-radius: 50%;
   cursor: pointer;
   transition: background .15s ease-in-out;
-}
+} */
 
 .range-slider-value {
   display: inline-block;
@@ -81,6 +142,18 @@
   padding: 5px 10px;
   margin-left: 12px;
   font-size: 18px;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
 }
 
 .range-slider-value:after {
@@ -103,3 +176,225 @@
   width: 90%;
   margin-left: 50px;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 6.5%;
+  width: 65%;
+  
+  
+  /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; */
+  background-color: rgba(80, 76, 76, 0.699);
+  background-size: 55%, 100%;
+  border-radius: 50%;
+}
+
+.card-0 {
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 30rem;
+  font-size: calc(100% + .1vw + .05vh);
+  margin: 5%;
+  border-width: 0px; */
+}
+
+.card-1 {
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 42rem;
+  font-size: calc(100% + .1vw + .1vh);
+  margin: 5%;
+  border-width: 0px; */
+}
+
+.card-2 {
+ /*  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 26rem;
+  font-size: calc(80% + .01vw + .01vh);
+  margin: 5%;
+  border-width: 0px; */
+} 
+
+/* .teste {
+  white-space: break-word;
+  overflow: auto;
+  text-overflow: ellipsis;
+} */
+
+.slider-container {
+  margin: 0px;
+}
+
+.carousel-caption{
+  max-width: 80px;
+  right: 15%;
+  left: 15%;
+  top: 1%;
+  
+}
+
+
+
+/* .card-img-0 {
+  height: 70vh;
+  width: 50vh;
+
+} */
+
+/* .card-img-1 {
+  height: 30vh;
+  width: 33vw;
+} */
+
+/* .card-img-2 {
+  height: 25vh;
+  width: 20vw;
+} */
+
+/* .card-text {
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+} */
+
+.cards {
+  display:flex;
+  border-width: 0px;
+  width: auto;
+  object-fit: scale-down;
+  
+}
+
+
+
+.card-produto {
+  border-width: 0px;
+}
+
+.btn teste{
+  background: rgba(201, 196, 196, 0.241);
+  border-width: 0px;
+}
+
+#btn-up {
+background: rgba(88, 86, 86, 0.319);
+border-width: 0px;
+color: rgba(228, 222, 222, 0.529);
+}
+
+
+#btn-down {
+  background: rgba(88, 86, 86, 0.315);
+  border-width: 0px;
+  color: rgba(228, 222, 222, 0.529);
+  }
+
+.slider-row{
+  background-color: blue;
+}
+
+.grid3-font {
+  font-size: small;
+}
+
+/* .teste{
+  width:30px;  
+  font-size:20px;
+  height:50px;
+  display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
+/* .cards-col{
+  height: 50vh;
+
+  
+} */
+
+/* .cards-body {
+  height: 10px;
+} */
+
+.cards-img{
+  height: 280px;
+  width: 300px;
+  border-radius: 15%;
+  margin-top: 5%;
+  /* height: 300px;
+  width: 200px; */
+}
+/* @media all and (min-width:1024px) and (max-width: 3000px) {
+  body {
+    font-size: 1.9em;
+}
+}
+
+@media all and (min-width:960px) and (max-width: 1024px) {
+  body {
+    font-size: 1.7em;
+}
+}
+
+@media all and (min-width:801px) and (max-width: 959px) {
+  body {
+    font-size: 1.5em;
+}
+}
+
+@media all and (min-width:769px) and (max-width: 800px) {
+  body {
+    font-size: .8em;
+}
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  body {
+    font-size: 1.3em;
+}
+}
+
+@media all and (min-width:481px) and (max-width: 568px) {
+  body {
+    font-size: 1em;
+}
+}
+
+@media all and (min-width:321px) and (max-width: 480px) {
+  body {
+    font-size: .9em;
+}
+}
+
+@media all and (min-width:0px) and (max-width: 320px) {
+  body {
+    font-size: .8em;
+}
+} */
+ 
+
+/*   @media all and (max-width: 1200px) { 
+  body {
+      font-size: 1.5em; 
+  }
+}
+@media all and (max-width: 1000px) { 
+  body {
+      font-size: 1.2em; 
+      }
+  }
+
+@media all and (max-width: 500px) { 
+  body {
+      font-size: 0.6em; 
+      }
+  }  */

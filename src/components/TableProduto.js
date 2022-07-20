@@ -29,11 +29,11 @@ function TableProduto({ produto, index }) {
     return (
         <Fragment>
             <Col>
-                <Table borderless hover size="sm mt-5">
+                <Table borderless hover size="sm mt-3">
                     <tbody>
                         {tab.map((p, i)=> {
                             return (
-                                <tr className="" align="center" key={i}>
+                                <tr className="" align="start" key={i} >
                                     <td className="table-cel fs-5">{p['tamanho']}</td>
                                     <td className="table-cel fs-5">R$ {parseFloat(p['preco']).toLocaleString('pt-br', {minimumFractionDigits: 2})}</td>
                                 </tr>

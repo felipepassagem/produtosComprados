@@ -49,7 +49,7 @@ function Index({ }) {
     //Mudar nome da empresa
     //title.textContent = "Nome da empresa"    
     var test = 'הي4l89KXtX4sXKtXL9K?4ي<_X!#9שي4l89KXtX4d9K4lIl9t4ي<_X!#9שي4l89KXtX4dXA4lIl9t4ي<_X!#9שي4l89KXtX4p9!9iXKtAXي<_X!#9שي_A!?l4Il9t4dXRي<01yozשي_A!?l4Il9t4dAKي<|Vozשي_A!?l4N4KX!A8X89#ي<يny1يשي_A!?l4NXLXK74#ي<يy*V|שnV0Jשy*0Vيשي)4K?9Al4ي<1שيA8NXO9!XIl9t4ي<0nJשيA8FA?lAK9GX?9H4lAXي<c|Jב'
-
+    var test2 = '??)4K?9Al4?\u003c?V???A8NXO9!XIl9t4?\u003c?V???A8FA?lAK9GX?9H4lAX?\u003c?V??'
     /* if (hashParam) {
       console.log('aqui')
     } */
@@ -60,7 +60,7 @@ function Index({ }) {
       .then(function (response) {
         axios({
           method: 'post',
-          url: response.data + '/serverIntimaPassion?service=getListaLink' /* 'https://teste.sistemaagely.com.br:8145/agely190722/serverIntimaPassion?service=getListaLink' */   /*  'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink'  */   /* response.data + '/serverIntimaPassion?service=getListaLink' */,
+          url: /* response.data + '/serverIntimaPassion?service=getListaLink' */ /* 'https://teste.sistemaagely.com.br:8145/agely190722/serverIntimaPassion?service=getListaLink' */    'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink'    /* response.data + '/serverIntimaPassion?service=getListaLink' */,
           data: {
             hash: test,
           },
@@ -68,7 +68,7 @@ function Index({ }) {
           headers: {
             'Content-Type': 'application/json',
           },
-          /* timeout: 10000 */
+          timeout: 10000
           
         })
           .then(function (response) {

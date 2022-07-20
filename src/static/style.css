@@ -330,6 +330,10 @@ background-position-y: center; */
   
 } */
 
+.card-img-test{
+  content: url("../static/err.jpg");
+}
+
 
 .visible {
   /* visibility: visible; */

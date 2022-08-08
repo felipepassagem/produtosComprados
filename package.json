@@ -1,6 +1,6 @@
 {
   "name": "layout",
-  "homepage": "https://sistemaagely.com.br:8345/listaProdutos/",
+  "homepage": "https://aplicativo.sistemaagely.com.br/baseagely/listaProdutos/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,8 +27,10 @@
     "react-loader-spinner": "^5.1.5",
     "react-multi-carousel": "^2.8.2",
     "react-router-dom": "^6.3.0",
+    "react-screen-orientation": "^0.0.4",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "react-toastify": "^9.0.7",
     "slick-carousel": "^1.8.1",
     "slider": "^1.0.4",
     "swiper": "^8.3.0",

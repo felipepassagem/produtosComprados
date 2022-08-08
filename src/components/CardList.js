@@ -3,8 +3,7 @@ import {Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 
-function CardList({ data, value }) {
-    
+function CardList({ data, value, hashParam }) {
     const navigate = useNavigate();
     var screenWidth = window.innerWidth;
     var screenHeight = window.innerHeight;
@@ -27,7 +26,7 @@ function CardList({ data, value }) {
                     {backgroundImage: "url(" + `https://server.sistemaagely.com.br/${data['link']}` + ")", borderRadius: '10px'  , backgroundPositionX: 'center', backgroundPositionY: 'center',backgroundSize: 'cover', height: '8rem'} :
                     {backgroundImage: "url(" + `https://server.sistemaagely.com.br/${data['link']}` + ")", borderRadius: '10px'  , backgroundPositionX: 'center', backgroundPositionY: 'center',backgroundSize: 'cover', height: '20rem'}
                     }
-                    onClick={() => navigate(`/car/${data['idproduto']}`)}
+                    onClick={() => navigate(`/${hashParam}/${data['idproduto']}`)}
                     ></div>
                 <Card.Body className="p-1">
                     <Card.Text className={screenHeight > screenWidth && value == 2 ? "b-0 p-0 m-0 text-muted fw-bold " : screenHeight > screenWidth && value == 1 ? "b-0 p-0 m-0 text-muted fw-bold fs-6 " : "b-0  p-0 m-0 fs-5 text-muted fw-bold"} style={{ maxWidth:"100%", whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden"}}>

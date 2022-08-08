@@ -6,6 +6,7 @@ import CardProdutoScreen from './screens/CardProdutoScreen';
 import HomeScreen from './screens/HomeScreen';
 import { Children, useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
@@ -29,11 +30,13 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <ToastContainer />
         <Routes>
           {/* <Route path="/" element={<Home/>}></Route> */}
           <Route path="/:hashParam" element={<HomeScreen  />}></Route>
-          <Route path="/car/:id" element={<CardProdutoScreen  />}></Route>
+          <Route path="/:hashParam/:id" element={<CardProdutoScreen  />}></Route>
         </Routes>
+        
       </Router>
 
     </div>

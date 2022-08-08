@@ -4,28 +4,7 @@ import "../static/style.css";
 import {createUseStyles} from 'react-jss'
 
 function Slider(props) {
-  const { step, min, max, value, defaultLength, onChangeValue,linearGradientcolor,
-    rangeBackgrondColor,
-    sliderThumbColor, } = props;
-    
-  
-
-  
-
-/*   const useStyles = createUseStyles({
-    rangeslider : {
-      '&::-webkit-slider-thumb': {
-        backgroundColor: props => props.sliderThumbColor,
-        boxShadow: props => `0 0 0 3px #fff, 0 0 0 6px ${props.sliderThumbColor}`,
-      },
-      '&::-moz-slider-thumb': {
-        backgroundColor: props => props.sliderThumbColor,
-        boxShadow: props => `0 0 0 3px #fff, 0 0 0 6px ${props.sliderThumbColor}`,
-      }
-    }
-  }); */
-
- /*  const classes = useStyles(props); */
+  const { step, min, max, value, defaultLength, onChangeValue} = props;
   const rangeRef = useRef();
   const [range, setRange] = useState(defaultLength)
 
@@ -34,14 +13,9 @@ function Slider(props) {
     onChangeValue(e);
   };
 
-
-
-
-  
-
   return (
     <Fragment>
-      <Col className="slider-container justify-content-center pb-3" id='slider' style={{paddingLeft: '', position: 'fixed', zIndex: '1', backgroundColor: "white"}}>
+      <Col className="slider-container justify-content-center pb-3" id='slider' style={{paddingTop: '20px', position: 'fixed', zIndex: '1', backgroundColor: "white"}}>
         <input
         ref={rangeRef}
           className={`range-slider`}

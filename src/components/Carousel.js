@@ -13,8 +13,7 @@ import LoadingSpinner from './LoadingSpinner'
 
 function CarouseslTest5({ fotos, onChangeCarosel }) {
     const [arrFotos, setArrFotos] = useState('')
-    var key = 0
-    var key1 = 55
+    
 
     useEffect(() => {
         var arrFotos = []
@@ -39,12 +38,13 @@ function CarouseslTest5({ fotos, onChangeCarosel }) {
             }}
             draggable={true}
             swipeToSlide={true}
+            key={1}
         >
             {arrFotos ? arrFotos.map((fotos, i) => {
                 
                 return (
                     <Swiper
-                    key={fotos}
+                        key={i*55}
                         speed={550}
                         spaceBetween={100}
                         navigation={true}
@@ -53,11 +53,11 @@ function CarouseslTest5({ fotos, onChangeCarosel }) {
                         className="mySwiper"
                     >
                         {fotos.map((f, i) => {
-                            console.log(f)
+                            
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key={i*555}>
                                     <img
-                                    key={f}
+                                    
                                         className="d-block w-100 visible card-img-asd"
                                         src={`https://server.sistemaagely.com.br/${f}`}
                                     />

@@ -8,6 +8,11 @@ body {
   font-family: 'Montserrat', cursive;
 }
 
+.header-img{
+  height: 5rem;
+
+}
+
 .inner-caro {
   transform: rotate(-90deg);
   height: 100%;
@@ -27,6 +32,12 @@ body {
 
 .div-img {
   transform: rotate(90deg);
+}
+
+.back-btn{
+  float: inline-end;
+  display:flex;
+  padding-right: 5rem;
 }
 
 
@@ -89,10 +100,21 @@ body {
   box-shadow: 0px 0px 3px 3px #201f1f4b;
 }
 
+.fa-angle-left::before{
+  font-size: 35px;
+  color: rgba(75, 77, 77, 0.681);
+}
+
+.nav-container{
+  padding-left: 1px;
+  margin-left: 5%;
+}
 
 
 .navbar {
-  color: aquamarine;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: white;
 }
 
 .carousel-inner {
@@ -167,6 +189,8 @@ body {
 #btn-voltar {
   background-color: rgba(254, 254, 254, 0.058) !important;
   border-width: 0px;
+  margin-right: 8rem;
+  
 }
 
 .hidden {
@@ -394,11 +418,15 @@ background-position-y: center; */
 
 .card-img-asd {
   height: 26rem;
-  width: 19.3rem !important;
+  width: 18.5rem !important;
   border-radius: 15px;
   margin-right: 0px !important;
   margin-left: 2%;
   margin-right: 2%;
+}
+
+.row>* {
+  padding-right: 0px;
 }
 
 .swiper-button-prev::after{
@@ -430,7 +458,7 @@ background-position-y: center; */
 }
 
 .spinner-col{
-  padding-top: 20rem;
+  padding-top: 40vh;
 }
 
 .swiper-button-next::after{
@@ -511,7 +539,11 @@ element.style {}
 }
 
 
-
+.navbar-brand{
+  
+  position: inherit;
+  
+}
   
 .navbar-2{
   margin-top: 56px;
@@ -566,6 +598,7 @@ element.style {}
   margin-right: 15% !important;
   width: 30px !important;
   height: 30px !important;
+  padding-right: 40px !important;
   z-index: 1;
 }
 
@@ -595,6 +628,7 @@ element.style {}
   margin-left: 12% !important;
   width: 30px !important;
   height: 30px !important;
+  
   z-index: 1;
 }
 

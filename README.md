@@ -1,3 +1,30 @@
+PASSO A PASSO PARA ADEUQAR A PÁGINA PARA CADA EMPRESA
+
+1- mudar home URL no packege.json
+EX: "homepage": "https://aplicativo.sistemaagely.com.br/intimapassion/listaProdutos/"
+
+2- mudar o nome da empresa no public/index.html e index.js
+  - Troca o nme da emrpesa na aba do navegador
+
+3- mudar o caminho da raquisição axios
+   - Puxa os produtos dos ervidor
+
+4- mudar a img logo na pasta static e public
+   - Muda a imagem no header e na aba do navegador
+
+---------------------------------------------------------------------
+SQL para criar a tabela que armazena o hash
+
+CREATE TABLE appconsignado_hash_listaprodutos (
+	idhash serial NOT NULL,
+	md5 text NULL,
+	hash text NULL,
+	"data" timestamp NULL
+);
+----------------------------------------------------------------------
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

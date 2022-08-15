@@ -34,7 +34,7 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Home/>}></Route> */}
           <Route path="/:hashParam" element={<HomeScreen  />}></Route>
-          <Route path="/:hashParam/:id" element={<CardProdutoScreen  />}></Route>
+          <Route path="/:hashParam/:id/:grade/:preco/:descricao/:tamanho/:cor/:img_url/:teste" element={<CardProdutoScreen  />}></Route>
         </Routes>
         
       </Router>

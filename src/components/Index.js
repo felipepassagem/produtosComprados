@@ -79,9 +79,11 @@ function Index({ }) {
       .then(function (response) {
         axios({
           method: 'post',
-          url: /* 'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink' */    response.data + '/serverBaseAgely?service=getListaLink'   /* 'https://teste.sistemaagely.com.br:8145/agely190722/serverIntimaPassion?service=getListaLink' */    /* 'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink'  */  /* response.data + '/serverIntimaPassion?service=getListaLink' */,
+          url: /* 'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink' */  'http://127.0.0.1:8888/serverIntimaPassion?service=getDetalhesPedido'  /* response.data + '/serverBaseAgely?service=getListaLink' */,
           data: {
-            hash: hashParam,
+            /*hash: hashParam*/
+            idpedidoVenda: "199922",
+            idpessoa: 212704
           },
           headers: {
             'Content-Type': 'application/json',
@@ -89,10 +91,10 @@ function Index({ }) {
           timeout: 400000,
         })
           .then(function (response) {
+            var itens = response.data.obj.itens
+            console.log(response)
             
-            var temp = response.data.arrayObj
-            
-            setObj(response.data.arrayObj)
+            setObj(itens)
             /* document.body.style.backgroundColor = "white" */
             setLoading(false)
 
@@ -145,7 +147,8 @@ function Index({ }) {
 
   return (
     <Fragment>
-      {loading ? <LoadingScreen></LoadingScreen>
+      
+       {loading ? <LoadingScreen></LoadingScreen>
         : !landscape ? <Container fluid className="pb-2 pr-2 pl-2 " >
           <Row className='pb-5' style={{ backgroundColor: 'white' }}>
             <IndexHeader></IndexHeader>
@@ -174,10 +177,10 @@ function Index({ }) {
           <Row xs={1} md={2} className="g-4 pt-3">
             {data.map((data, index) => (
               <Col className={screenHeight > screenWidth && rangeValue == 1 ? 'justify-content-center d-flex p-3' : 'justify-content-center d-flex p-1'}
-                xs={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
-                sm={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
-                md={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
-                lg={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
+                xs={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 12}
+                sm={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 12}
+                md={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 6}
+                lg={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 6}
                 xl={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
                 xxl={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
                 key={index * 11}
@@ -186,7 +189,7 @@ function Index({ }) {
                   justifyContent: "center",
                 }}
               >
-                <CardList data={data} key={index} hashParam={hashParam} value={rangeValue}></CardList>
+                <CardList data={data} key={index} hashParam={hashParam} value={rangeValue}  ></CardList>
               </Col>
             ))}
           </Row>

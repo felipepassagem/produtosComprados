@@ -14,12 +14,16 @@ import LoadingSpinner from './LoadingSpinner'
 function CarouseslTest5({ fotos, onChangeCarosel }) {
     const [arrFotos, setArrFotos] = useState('')
     
+    
 
     useEffect(() => {
+        var stringFotos = fotos
+        var splitedFotos = fotos.split(";")
         var arrFotos = []
-        for (var i = 0; i < fotos.length; i++) {
-            arrFotos.push(fotos[i]['fotos'])
+        for (var i = 0; i < splitedFotos.length - 1; i++) {
+            arrFotos.push(splitedFotos[i])
         }
+        console.log(arrFotos)
         setArrFotos(arrFotos)
     }, [])
 
@@ -29,6 +33,7 @@ function CarouseslTest5({ fotos, onChangeCarosel }) {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        vertical: true,
     };
 
     return (
@@ -39,9 +44,10 @@ function CarouseslTest5({ fotos, onChangeCarosel }) {
             draggable={true}
             swipeToSlide={true}
             key={1}
+            vertical={true}
+            verticalSwiping={true}
         >
             {arrFotos ? arrFotos.map((fotos, i) => {
-                
                 return (
                     <Swiper
                         key={i*55}
@@ -49,21 +55,21 @@ function CarouseslTest5({ fotos, onChangeCarosel }) {
                         spaceBetween={100}
                         navigation={true}
                         modules={[Navigation]}
-                        direction="vertical"
+                        /* direction="vertical" */
                         className="mySwiper"
                     >
-                        {fotos.map((f, i) => {
+                       
                             
-                            return (
+                            
                                 <SwiperSlide key={i*555}>
                                     <img
                                     
                                         className="d-block w-100 visible card-img-asd"
-                                        src={`https://server.sistemaagely.com.br/${f}`}
+                                        src={`https://server.sistemaagely.com.br/${fotos}`}
                                     />
                                 </SwiperSlide>
-                            )
-                        })}
+                            
+                        
                     </Swiper>
                 )
             }) : <LoadingSpinner></LoadingSpinner>}

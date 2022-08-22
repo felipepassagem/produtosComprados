@@ -3,7 +3,7 @@ import {Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 
-function CardList({ data, value, hashParam }) {
+function CardList({ data, value, idpessoa, idpedidoVenda }) {
     
     const navigate = useNavigate();
     var screenWidth = window.innerWidth;
@@ -27,7 +27,7 @@ function CardList({ data, value, hashParam }) {
                     {backgroundImage: "url(" + `https://server.sistemaagely.com.br/${data.fotos.split(',')[0]}` + ")", borderRadius: '10px'  , backgroundPositionX: 'center', backgroundPositionY: 'center',backgroundSize: 'cover', height: '8rem'} :
                     {backgroundImage: "url(" + `https://server.sistemaagely.com.br/${data.fotos.split(',')[0]}` + ")", borderRadius: '10px'  , backgroundPositionX: 'center', backgroundPositionY: 'center',backgroundSize: 'cover', height: '20rem'}
                     }
-                    onClick={() => navigate(`/${hashParam}/${data['idproduto']}/${data['idprodutograde']}/${data.preco}/${data.descricao}/${data.tamanho}/${data.cor}/${data.url_img != null ?  data.url_img.split('?')[0]: undefined}/${data.url_img != null ? data.url_img.split('?')[1] : undefined}`)}
+                    onClick={() => navigate(`/${idpessoa}/${idpedidoVenda}/${data['idproduto']}/${data['idprodutograde']}/${data.preco}/${data.descricao}/${data.tamanho}/${data.cor}/${data.url_img != null ?  data.url_img.split('?')[0]: undefined}/${data.url_img != null ? data.url_img.split('?')[1] : undefined}`)}
                     ></div>
                 <Card.Body className="p-1">
                     <Card.Text className={screenHeight > screenWidth && value == 2 ? "b-0 p-0 m-0 text-muted fw-bold " : screenHeight > screenWidth && value == 1 ? "b-0 p-0 m-0 text-muted fw-bold fs-6 " : "b-0  p-0 m-0 fs-5 text-muted fw-bold"} style={{ maxWidth:"100%", whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden"}}>

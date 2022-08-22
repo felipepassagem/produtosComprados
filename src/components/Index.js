@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Container, Card, Col, Row, Form, Input, Nav } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import CardList from "./CardList";
 import Slider from "./Slider";
 import "../static/style.css";
@@ -15,7 +15,7 @@ import Orientation from "./Orientation";
 
 
 function Index({ }) {
-  const { hashParam } = useParams();
+  const { idpessoa, idpedidoVenda } = useParams();
   const [rangeValue, setRangeValue] = useState(2);
   const [data, setObj] = useState('')
   const [loading, setLoading] = useState(true)
@@ -82,8 +82,8 @@ function Index({ }) {
           url: /* 'http://127.0.0.1:8888/serverIntimaPassion?service=getListaLink' */  'http://127.0.0.1:8888/serverIntimaPassion?service=getDetalhesPedido'  /* response.data + '/serverBaseAgely?service=getListaLink' */,
           data: {
             /*hash: hashParam*/
-            idpedidoVenda: "199922",
-            idpessoa: 212704
+            idpessoa: idpessoa,
+            idpedidoVenda: idpedidoVenda
           },
           headers: {
             'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ function Index({ }) {
         })
           .then(function (response) {
             var itens = response.data.obj.itens
-            console.log(response)
+            
             
             setObj(itens)
             /* document.body.style.backgroundColor = "white" */
@@ -177,8 +177,8 @@ function Index({ }) {
           <Row xs={1} md={2} className="g-4 pt-3">
             {data.map((data, index) => (
               <Col className={screenHeight > screenWidth && rangeValue == 1 ? 'justify-content-center d-flex p-3' : 'justify-content-center d-flex p-1'}
-                xs={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 12}
-                sm={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 12}
+                xs={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 :4}
+                sm={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
                 md={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 6}
                 lg={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 6}
                 xl={rangeValue == 1 ? 6 : rangeValue == 0 ? 12 : 4}
@@ -189,7 +189,7 @@ function Index({ }) {
                   justifyContent: "center",
                 }}
               >
-                <CardList data={data} key={index} hashParam={hashParam} value={rangeValue}  ></CardList>
+                <CardList data={data} key={index} value={rangeValue} idpessoa={idpessoa} idpedidoVenda={idpedidoVenda}  ></CardList>
               </Col>
             ))}
           </Row>

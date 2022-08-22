@@ -41,7 +41,6 @@ function CardProduto() {
 
 
     useEffect(() => {
-        console.log(hashParam, id,grade, preco,descricao, tamanho, cor, img_url, teste )
         if (img_url == "undefined" || teste == "undefined" ){
             setShow(false)
         } else {
@@ -50,8 +49,7 @@ function CardProduto() {
 
         var img = img_url + "?" +teste
         setImg(img)
-        
-        console.log(img)
+
         setLoading(true)
         /* document.body.style.backgroundColor = "gray" */
 
@@ -75,7 +73,6 @@ function CardProduto() {
                     .then(function (response) {
 
                         var data = response
-                        console.log(data.data.obj)
                         setProduto(data.data.obj)
                         /*
                         for (var i in data) {
@@ -125,7 +122,7 @@ function CardProduto() {
                                     </Card.Text>
                                     {/* <Card.Subtitle className=" text-muted text-center footer-text pt-1">Arraste para o lado para outras cores</Card.Subtitle> */}
                                     <Card.Subtitle className=" text-muted pt-3 fs-4">Ref.: { produto['referencia'] }</Card.Subtitle>
-                                    <Card.Subtitle className=" text-muted pt-3 fs-4">Cor.: {show ? <span><ColorImg imgUrl={img}></ColorImg>{ cor }</span> : <span> {cor} </span>}</Card.Subtitle>
+                                    <Card.Subtitle className=" text-muted pt-3 fs-4">Cor.: {show ? <span><ColorImg imgUrl={img}></ColorImg>{ cor[0].toLocaleUpperCase()  + cor.substring(1).toLowerCase() }</span> : <span> { cor[0].toLocaleUpperCase()  + cor.substring(1).toLowerCase() } </span>}</Card.Subtitle>
                                     <Card.Subtitle className=" text-muted pt-3 fs-4"> Tamanho.: {tamanho}</Card.Subtitle>
                                     <Card.Subtitle className=" text-muted pt-3 fs-4"> R$.: {parseFloat(preco).toLocaleString('pt-br', {minimumFractionDigits: 2})}</Card.Subtitle>
                                     {/* <Card.Subtitle className="mb-3 text-muted pt-2 fw-bold fs-4">Cor: {produto['grades'][index]['cor'].split(";")[0] != 'null'
@@ -150,9 +147,9 @@ function CardProduto() {
                                     <div >
 
                                         {
-                                            turl ? <img
+                                            produto.urlGuia ? <img
                                                 className="d-block w-100 visible timg thumbnail"
-                                                src={`https://server.sistemaagely.com.br/${turl}`}
+                                                src={`https://server.sistemaagely.com.br/${produto.urlGuia}`}
                                             /> : <span></span>
                                         }
 

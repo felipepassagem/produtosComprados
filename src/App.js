@@ -4,9 +4,9 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import CardProdutoScreen from './screens/CardProdutoScreen';
 import HomeScreen from './screens/HomeScreen';
-import { Children, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -33,8 +33,8 @@ function App() {
       <ToastContainer />
         <Routes>
           {/* <Route path="/" element={<Home/>}></Route> */}
-          <Route path="/:hashParam" element={<HomeScreen  />}></Route>
-          <Route path="/:hashParam/:id/:grade/:preco/:descricao/:tamanho/:cor/:img_url/:teste" element={<CardProdutoScreen  />}></Route>
+          <Route path="/:idpessoa/:idpedidoVenda" element={<HomeScreen  />}></Route>
+          <Route path="/:idpessoa/:idpedidoVenda/:id/:grade/:preco/:descricao/:tamanho/:cor/:img_url/:teste" element={<CardProdutoScreen  />}></Route>
         </Routes>
         
       </Router>
